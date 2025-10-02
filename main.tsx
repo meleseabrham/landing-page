@@ -1,5 +1,2 @@
-import { createRoot } from "react-dom/client";
-import App from "@/App.tsx";
-import "./index.css";
-
-createRoot(document.getElementById("root")!).render(<App />);
+// Forward to real entry located under src/ to align with tsconfig include and Vite aliasing
+import "./src/main.tsx";

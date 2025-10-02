@@ -22,6 +22,7 @@ const Navbar = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="text-xl font-bold" onClick={closeMenuAndNavigate}>
           <span className="gradient-primary bg-clip-text text-transparent">WebPro</span>
+          <span className="text-primary">WebPro</span>
         </Link>
 
         {/* Desktop nav */}
@@ -31,10 +32,10 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-medium transition-smooth hover:text-primary",
+                "text-sm font-medium transition-smooth hover:text-primary border-b-2 border-transparent pb-1",
                 location.pathname === link.path
-                  ? "text-primary"
-                  : "text-muted-foreground"
+                  ? "text-primary border-primary"
+                  : "text-muted-foreground hover:border-primary/50"
               )}
             >
               {link.name}
@@ -67,9 +68,9 @@ const Navbar = () => {
               to={link.path}
               onClick={closeMenuAndNavigate}
               className={cn(
-                "rounded-md px-2 py-2 text-sm font-medium transition-smooth hover:bg-accent hover:text-accent-foreground",
+                "rounded-md px-2 py-2 text-sm font-medium transition-smooth hover:bg-accent hover:text-accent-foreground border-b-2 border-transparent",
                 location.pathname === link.path
-                  ? "text-primary"
+                  ? "text-primary border-primary"
                   : "text-muted-foreground"
               )}
             >
